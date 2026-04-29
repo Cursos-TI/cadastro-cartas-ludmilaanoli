@@ -10,10 +10,12 @@ int main() {
 char estado;
 char codigo [4];
 char nomeCidade [50];
-int população;
+int populacao;
 float area;
 float pib;
 int pontosTuristicos;
+float densidadePopulacional;
+float pibperCapita;
 
   // Área para entrada de dado
   printf(" Cadastro das cartas super triunfo\n");
@@ -28,7 +30,7 @@ int pontosTuristicos;
   scanf(" %[^\n]s",nomeCidade);
 
   printf("digite a população: \n");
-  scanf(" %d",&população);
+  scanf(" %d",&populacao);
 
   printf("digite a area em km²: \n");
   scanf(" %f",&area);
@@ -39,15 +41,22 @@ int pontosTuristicos;
   printf("digite a quantidade de pontos turisticos: \n");
   scanf(" %d", &pontosTuristicos);
 
+  // calculos
+  densidadePopulacional = (float)populacao / area;
+  pibperCapita = pib *1000000000/ populacao;
+
+
   // Área para exibição dos dados da cidade
   printf("--- Dados da carta---\n");
 
   printf("estado: %c\n", estado);
   printf("nome da cidade: %s\n", nomeCidade);
-  printf("população: %d\n", população);
+  printf("população: %d\n", populacao);
   printf("area: %.2f km²\n", area);
   printf("pib: %.2f bilhões de reais\n", pib);
   printf("pontos turistico: %d\n", pontosTuristicos);
+  printf("densidade populacional: %.2f hab/km²\n", densidadePopulacional);
+  printf("pib per Capita: %.2f reais\n", pibperCapita);
 
-return 0;
-} 
+  return 0;
+}
